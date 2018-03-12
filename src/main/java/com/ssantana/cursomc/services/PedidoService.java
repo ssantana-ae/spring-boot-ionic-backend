@@ -14,7 +14,7 @@ public class PedidoService {
 	private PedidoRepository repo;
 	
 	public Pedido find(Integer id) {
-		Pedido obj = repo.findById(id).orElse(null);
+		Pedido obj = repo.findOne(id);
 		if (obj == null) {
 			throw new ObjectNotFoundException("Objeto não encontrado! Id: " + id + ", Tipo: " + Pedido.class.getName());
 		}

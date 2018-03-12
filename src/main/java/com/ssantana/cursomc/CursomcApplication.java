@@ -62,7 +62,12 @@ public class CursomcApplication implements CommandLineRunner{
 		// TODO Auto-generated method stub
 		Categoria cat1 = new Categoria(null, "Informática");
 		Categoria cat2 = new Categoria(null, "Escritório");
-		
+		Categoria cat3 = new Categoria(null, "Cama mesa e banho");
+		Categoria cat4 = new Categoria(null, "Eletrônicos");
+		Categoria cat5 = new Categoria(null, "Jardinagem");
+		Categoria cat6 = new Categoria(null, "Decoração");
+		Categoria cat7 = new Categoria(null, "Perfumaria");
+		 
 		Produto p1 = new Produto(null, "Computador", 2000.00);
 		Produto p2 = new Produto(null, "Impressora", 800.00);
 		Produto p3 = new Produto(null, "Mouse", 80.00);
@@ -74,13 +79,9 @@ public class CursomcApplication implements CommandLineRunner{
 		p2.getCategorias().addAll(Arrays.asList(cat1, cat2));
 		p3.getCategorias().addAll(Arrays.asList(cat1));
 			
-		//categoriaRepository.save(Arrays.asList(cat1, cat2));
-		categoriaRepository.save(cat1);
-		categoriaRepository.save(cat2);
+		categoriaRepository.save(Arrays.asList(cat1, cat2, cat3, cat4, cat5, cat6, cat7));
 		
-		produtoRepository.save(p1);
-		produtoRepository.save(p2);
-		produtoRepository.save(p3);
+		produtoRepository.save(Arrays.asList(p1, p2, p3));
 		
 		Estado est1 = new Estado(null, "Minas Gerais");
 		Estado est2 = new Estado(null, "São Paulo");
@@ -92,12 +93,9 @@ public class CursomcApplication implements CommandLineRunner{
 		est1.getCidades().addAll(Arrays.asList(c1));
 		est2.getCidades().addAll(Arrays.asList(c2, c3));
 		
-		estadoRepository.save(est1);
-		estadoRepository.save(est2);
+		estadoRepository.save(Arrays.asList(est1, est2));
 		
-		cidadeRepository.save(c1);
-		cidadeRepository.save(c2);
-		cidadeRepository.save(c3);
+		cidadeRepository.save(Arrays.asList(c1, c2, c3));
 		
 		Cliente cli1 = new Cliente(null, "Maria Silva", "maria@gmail.com", "36378912377", TipoCliente.PESSOAFISICA);
 		
@@ -108,9 +106,8 @@ public class CursomcApplication implements CommandLineRunner{
 
 		cli1.getEnderecos().addAll(Arrays.asList(e1, e2));
 		
-		clienteRepository.save(cli1);
-		enderecoRepository.save(e1);
-		enderecoRepository.save(e2);
+		clienteRepository.save(Arrays.asList(cli1));
+		enderecoRepository.save(Arrays.asList(e1, e2));
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm");
 		
@@ -125,11 +122,9 @@ public class CursomcApplication implements CommandLineRunner{
 		
 		cli1.getPedidos().addAll(Arrays.asList(ped1, ped2));
 		
-		pedidoRepository.save(ped1);
-		pedidoRepository.save(ped2);
+		pedidoRepository.save(Arrays.asList(ped1, ped2));
 		
-		pagamentoRepository.save(pagto1);
-		pagamentoRepository.save(pagto2);
+		pagamentoRepository.save(Arrays.asList(pagto1, pagto2));
 		
 		ItemPedido ip1 = new ItemPedido(ped1, p1, 0.00, 1, 2000.00);
 		ItemPedido ip2 = new ItemPedido(ped1, p3, 0.00, 2, 80.00);
@@ -142,9 +137,7 @@ public class CursomcApplication implements CommandLineRunner{
 		p2.getItens().addAll(Arrays.asList(ip3));
 		p3.getItens().addAll(Arrays.asList(ip2));
 		
-		itemPedidoRepository.save(ip1);
-		itemPedidoRepository.save(ip2);
-		itemPedidoRepository.save(ip3);
+		itemPedidoRepository.save(Arrays.asList(ip1, ip2, ip3));
 		
 	}
 }
