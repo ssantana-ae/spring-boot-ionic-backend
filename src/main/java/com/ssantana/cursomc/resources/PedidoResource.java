@@ -13,9 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import com.ssantana.cursomc.domain.Categoria;
 import com.ssantana.cursomc.domain.Pedido;
-import com.ssantana.cursomc.dto.CategoriaDTO;
 import com.ssantana.cursomc.services.PedidoService;
 
 import javassist.tools.rmi.ObjectNotFoundException;
